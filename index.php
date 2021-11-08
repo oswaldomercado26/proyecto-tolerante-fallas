@@ -11,34 +11,34 @@
     <div class="container mt-4">
         <h1 class="display-4 text-center"><i class="fas fa-book"></i>My<span class="text-primary">Book</span>Stock</h1><br>
         <!--Form-->
-        <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+        <form action="añadir.php" method="post" >
             <div class="form-group">
                 <label>ISBN</label>
-                <input type="text" name="isbn" id="isbn" class="form-control">
+                <input type="text" name="isbn" id="isbn" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Titulo</label>
-                <input type="text" name="titulo" id="titulo" class="form-control">
+                <input type="text" name="titulo" id="titulo" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Autor</label>
-                <input type="text" name="autor" id="autor" class="form-control">
+                <input type="text" name="autor" id="autor" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Descripcion</label>
-                <input type="text" name="descripcion" id="descripcion" class="form-control">
+                <input type="text" name="descripcion" id="descripcion" class="form-control"  required >
             </div>
             
             <div class="form-group">
                 <label>Stock</label>
-                <input type="number" name="stock" id="stock" class="form-control">
+                <input type="number" name="stock" id="stock" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Precio</label>
-                <input type="number" name="precio" id="precio" class="form-control">
+                <input type="number" name="precio" id="precio" class="form-control" required>
             </div>
             <div>
-                <input type="submit" value="Add Book" class="btn btn-primary btn-block">
+                <input type="submit" value="Add Book" class="btn btn-primary btn-block" required>
             </div>
         </form>
         <!--List-->
@@ -60,6 +60,6 @@
             </tbody>
         </table>
     </div>
-    <script src="book.js"></script>
 </body>
 </html>
+
