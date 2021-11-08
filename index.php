@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require "conexion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +16,12 @@
     <div class="container mt-4">
         <h1 class="display-4 text-center"><i class="fas fa-book"></i>My<span class="text-primary">Book</span>Stock</h1><br>
         <!--Form-->
+        <?php
+        if(isset($_SESSION["success"])){
+            echo '<p style="color:black">'.$_SESSION["success"].'</p>';
+            unset($_SESSION['success']);
+        }
+        ?>
         <form action="añadir.php" method="post" >
             <div class="form-group">
                 <label>ISBN</label>
@@ -42,23 +53,54 @@
             </div>
         </form>
         <!--List-->
-        <table class="table table-striped mt-4" id="Book-list">
-            <thead>
-                <tr>
-                    <th>ISBN</th>
-                    <th>Titulo</th>
-                    <th>Autor</th>
-                    <th>Descripcion</th>
-                    <th>Stock</th>
-                    <th>Precio</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
+        <?php
+        //$smtm = $pdo->query("SELECT COUNT(*) FROM Libros");
+        $smtm = $pdo->query("SELECT COUNT(*) FROM Libro");
+        $count = $smtm->fetchColumn();
+        if($count > 0){ 
+            echo('<table class="table table-striped mt-4" id="Book-list">');   
+                echo('<thead>');
+                    echo('<tr>');
+                        echo('<th>ISBN</th>');   
+                        echo('<th>Titulo</th>');        
+                        echo('<th>Autor</th>');        
+                        echo('<th>Descripcion</th>');
+                        echo('<th>Stock</th>');
+                        echo('<th>Precio</th>');       
+                        echo('<th>Edit</th>');        
+                        echo('<th>Delete</th>');  
+                    echo('</tr>');
+                echo(' </thead>');
+                echo('<tbody>');   
+            //$smtm = $pdo->query("SELECT * FROM libros");
+            $smtm = $pdo->query("SELECT * FROM libro");
+            while($row= $smtm->fetch(PDO::FETCH_ASSOC)){
+                echo "<tr><td>";
+                echo(htmlentities($row['isbn']));
+                echo "</td><td>";
+                echo(htmlentities($row['titulo']));
+                echo "</td><td>";
+                echo(htmlentities($row['autor']));
+                echo "</td><td>";
+                echo(htmlentities($row['descripcion']));
+                echo "</td><td>";
+                echo(htmlentities($row['stock']));
+                echo "</td><td>";
+                echo(htmlentities($row['preio']));
+                echo "</td><td>";
+                echo('<a href="#">Edit</a>');
+                echo "</td><td>";
+                echo('<a href="#">Delete</a>');
+                echo("</td></tr>\n");
+            }
 
-            </tbody>
-        </table>
+                
+                echo('</tbody>');    
+            echo('</table>');    
+        
+            
+        }
+        ?>
     </div>
 </body>
 </html>
