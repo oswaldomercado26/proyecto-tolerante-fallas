@@ -25,7 +25,7 @@ Ya teniendo los archivos solamente es necesario crear los pods necesarios con el
 
 Una vez creado los archivos pods lo necesario es revisar los servicios y la misma ip que nos podra mostrar nuestro programa.
 
-//imagen
+/home/sebastian/Imágenes/captura 1.png
 
 Ahi se muestran los pods ya creados de nuestra aplicacion.
 
