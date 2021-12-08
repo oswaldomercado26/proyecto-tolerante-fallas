@@ -39,3 +39,14 @@ Ya con esto podemos observar lo que es la aplicacion.
 
 Con esto ya podemos observar que nuestra aplicacion esta montada en kubernetes. 
 
+Pero a demas de eso podemos observar como son los microservicios mediante la aplicacion que se puede instalar en nuestro cluster llamada istio.
+
+Ya dentro podemos visualizarlo con el comando istio dashboard kiali ya que  kiali es su interfaz y se puede observar lo que es el trafico, es necesario tener un buen equipo ya que consume muchos recursos.
+
+![image](https://user-images.githubusercontent.com/81650365/145272895-5e533aaf-69bb-4420-b573-4a00803ad0d4.png)
+
+Ya solo quedaria revisar los grafos en los cuales podemos observar que trafico se pasa mediate la red, esto es de mucha ayuda debido a que sabes que micro servicios se usan y puedes controlar la carga de trabajo con mas microservicio.
+
+![image](https://user-images.githubusercontent.com/81650365/145273948-afb89a30-a663-4c4f-928d-543de77fc334.png)
+
+
