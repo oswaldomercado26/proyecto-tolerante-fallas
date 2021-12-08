@@ -25,13 +25,17 @@ Ya teniendo los archivos solamente es necesario crear los pods necesarios con el
 
 Una vez creado los archivos pods lo necesario es revisar los servicios y la misma ip que nos podra mostrar nuestro programa.
 
-/home/sebastian/Imágenes/captura 1.png
+![captura 1](https://user-images.githubusercontent.com/81650365/145157634-72909b82-3f2a-4cce-8fa7-d48a3995c95f.png)
 
 Ahi se muestran los pods ya creados de nuestra aplicacion.
 
 Para poder obtener la ip de nuestros servicios ya usamos el comando "minikube service list"
 
-//imgen
+![captura 2](https://user-images.githubusercontent.com/81650365/145157656-9d494e49-d2a6-42c8-8d8a-c4eb3f634cc8.png)
 
+Ya con esto podemos observar lo que es la aplicacion.
 
+![captura 3](https://user-images.githubusercontent.com/81650365/145157767-8335665d-a86e-499e-ad22-ec245c348c9d.png)
+
+Con esto ya podemos observar que nuestra aplicacion esta montada en kubernetes. 
 
